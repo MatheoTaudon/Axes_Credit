@@ -70,7 +70,7 @@ def show(df_best):
         selected_currency = st.multiselect("Currency", currencies, default=["EUR"] if "EUR" in currencies else currencies)
 
         sub_sectors = sorted(df_filtered["Sub_Sector"].dropna().unique())
-        selected_sub_sector = st.multiselect("Sub-Sector", sub_sectors, default=["IG - SnBnk/Fin"])
+        selected_sub_sector = st.multiselect("Sub-Sector", sub_sectors, default=["IG - SnBnk/Fin"] if "IG - SnBnk/Fin" in sub_sectors else sub_sectors)
 
         sub_options = ["Subordonnée", "Senior"]
         selected_sub = st.multiselect("Type", sub_options, default=sub_options)
@@ -205,4 +205,5 @@ def show(df_best):
 
         
         
+
 
